@@ -1,24 +1,29 @@
+html { height: 100% }
+
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-}
+/**************/
+/* map-canvas */
+/**************/
+#map-canvas { height: 100% }
 
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+/********/
+/* info */
+/********/
+#info {
+    background: white;
+    padding: 10px;
+    position: absolute;
+    width: 100px;
+    right: 0;
+    bottom: 400px;
 }
 
 .browsehappy {
@@ -26,4 +31,13 @@ body {
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
+}
+
+#info {
+    background: white;
+    padding: 10px;
+    position: absolute;
+    width: 100px;
+    right: 0;
+    bottom: 400px;
 }
