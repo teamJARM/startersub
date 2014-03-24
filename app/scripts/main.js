@@ -23,7 +23,7 @@ function initialize(location) {
 }
 
 function addMarkers() {
-  var iconBase      = root + 'markers/';
+  var iconBase      = root + 'images/markers/';
   var icons         = {
           incubators: {
             point: new google.maps.LatLng(51.924655, 4.484926),
