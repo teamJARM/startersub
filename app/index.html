@@ -7,11 +7,15 @@
         <meta charset="utf-8">
         <title>Startersub</title>
         <meta name="description" content="">
-        <!-- <meta name="viewport" content="width=device-width"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <link rel="shortcut icon" href="/favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" 
+            src="https://maps.googleapis.com/maps/api/js?sensor=false">
+        </script>
 
         <!-- endbower -->
         <!-- endbuild -->
@@ -62,7 +66,17 @@
 
         
 
-        <div id="map-canvas"/>
+        <div class="hero-unit">
+          <h1>Startersub</h1>
+          <p>You now have</p>
+          <ul>
+            <li>HTML5 Boilerplate</li>
+
+          </ul>
+        </div>
+        <div id="map-canvas"></div>
+        <div id="info"></div>
+
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
