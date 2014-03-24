@@ -27,7 +27,9 @@
           </ul>
         </div>
         <div id="profile">
-            <div class="info"></div>
+            <div class="info">
+                
+            </div>
             <div class="logo"></div>
         </div>
 
