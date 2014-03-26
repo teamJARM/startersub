@@ -1,6 +1,35 @@
-html { height: 100% }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
 body {
+    line-height: 1;
     background: #EDF2F7;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -10,19 +39,40 @@ body {
     margin: 0;
     padding: 0;
 }
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html { height: 100% }
+
+body {
+
+}
 
 /*************/
 /* container */
 /*************/
 #container {
-    padding: 20px;
+    padding: 20px 20px 0;
 }
 
 /***********/
 /* top-div */
 /***********/
 #top-bar {
-    padding:5px 0;
+    margin-bottom: 5px;
 }
 
 #top-bar:after {
@@ -34,15 +84,17 @@ body {
 /* logo */
 #top-bar .logo {
     background-image: url('../images/logo_startersub.png');
+    background-repeat: no-repeat;
     background-size: 100% 100%;
     float: left;
-    width: 55%;
+    width: 45%;
     height: 50px;
 }
 
 /* nav */
 .nav {
     float: right;
+    padding: 9px 0;
 }
 
 #top-bar .nav ul {
@@ -102,38 +154,58 @@ body {
 /* gmaps-nav */
 #gmaps .gmaps-nav {
     position: absolute;
+    margin: 0 auto;
     top: 20px;
-    left:50%;
+    left: calc(50% - 134px);
 }
 
 #gmaps .gmaps-nav ul {
     list-style-type: none;
 }
 
-#gmaps .gmaps-nav ul li {
-    float: left;
-}
-
-#gmaps .gmaps-nav ul li a {
-    text-decoration: none;
-    color: #CCC;
+#gmaps .gmaps-nav ul:after {
+    clear: both;
+    content: '';
     display: block;
 }
 
-
-/***********/
-/* legenda */
-/***********/
-#legenda {
-    background: white;
-    padding: 10px;
-    position: absolute;
-    bottom: 20px;
-    width: 100px;
-    height: 150px;
-    right: 20px;
-    visibility: hidden;
+#gmaps .gmaps-nav ul li {
+    float: left;
+    border-left: 1px solid #CCC;
 }
+
+#gmaps .gmaps-nav ul li:first-child {
+    border-left: 0px;
+}
+
+#gmaps .gmaps-nav ul li a {
+    background-color: #FFF;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #808080;
+    display: block;
+    padding: 10px;
+}
+
+#gmaps .gmaps-nav ul li a i {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#gmaps .gmaps-nav ul li a i.i-home {background: url('../images/nav/home.png');}
+#gmaps .gmaps-nav ul li a i.i-maps {background: url('../images/nav/maps.png');}
+#gmaps .gmaps-nav ul li a i.i-account {background: url('../images/nav/account.png');}
+#gmaps .gmaps-nav ul li a i.i-settings {background: url('../images/nav/settings.png');}
+#gmaps .gmaps-nav ul li a i.i-wat {background: url('../images/nav/wat.png');}
+#gmaps .gmaps-nav ul li a i.i-hoe {background: url('../images/nav/hoe.png');}
+#gmaps .gmaps-nav ul li a i.i-legenda {background: url('../images/nav/legenda.png');}
+
+
 
 .browsehappy {
     margin: 0.2em 0;
