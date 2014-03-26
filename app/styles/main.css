@@ -22,13 +22,13 @@ body {
 /* top-div */
 /***********/
 #top-bar {
-    height: 60px;
+    padding:5px 0;
 }
 
 #top-bar:after {
     clear: both;
     content: '';
-    display: none;
+    display: block;
 }
 
 /* logo */
@@ -43,39 +43,57 @@ body {
 /* nav */
 .nav {
     float: right;
-    width: 45%;
 }
 
 #top-bar .nav ul {
     list-style-type: none;
+    text-align: right;
 }
 
 #top-bar .nav ul:after {
     clear: both;
     content: '';
-    display: none;
+    display: block;
 }
 
 #top-bar .nav ul li {
     float: left;
-    margin: 0 10px;
+    margin-left: 10px;
+}
+
+#top-bar .nav ul li:first-child {
+    margin-left: 0;
 }
 
 #top-bar .nav ul li a {
-    color: #ccc;
-    text-shadow: 1px 1px white, -1px -1px #444;
-    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    border-top: 1px solid #EDF2F7;
+    border-bottom: 1px solid #EDF2F7;
 }
 
-#top-bar .nav ul li a:hover {
-    color: #222;
+#top-bar .nav ul li.active a,
+#top-bar .nav ul li a:hover{
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    cursor: pointer;
+}
+
+#top-bar .nav ul li a {
+    color: #CCC;
+    text-shadow: 1px 1px white, -1px -1px #444;
+    text-decoration: none;
 }
 
 /**************/
 /* map-canvas */
 /**************/
-#map-canvas { 
+#gmaps { 
+    position: relative;
     width: 100%;
+}
+
+#map-canvas {
     height: 500px;
 }
 
@@ -86,10 +104,10 @@ body {
     background: white;
     padding: 10px;
     position: absolute;
+    bottom: 20px;
     width: 100px;
-    height: 300px;
-    right: 0;
-    bottom: 400px;
+    height: 150px;
+    right: 20px;
 }
 
 .browsehappy {
