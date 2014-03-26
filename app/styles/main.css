@@ -85,7 +85,7 @@ body {
 #top-bar .logo {
     background-image: url('../images/logo_startersub.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     float: left;
     width: 45%;
     height: 50px;
@@ -184,26 +184,32 @@ body {
     text-decoration: none;
     color: #808080;
     display: block;
-    padding: 10px;
+    padding: 15px 20px;
+}
+
+#gmaps .gmaps-nav ul li a:hover {
+    background-color: #eaeaea;
 }
 
 #gmaps .gmaps-nav ul li a i {
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: 0 0;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     display: inline-block;
     vertical-align: middle;
+    margin-right: 5px;
 }
 
-#gmaps .gmaps-nav ul li a i.i-home {background: url('../images/nav/home.png');}
-#gmaps .gmaps-nav ul li a i.i-maps {background: url('../images/nav/maps.png');}
-#gmaps .gmaps-nav ul li a i.i-account {background: url('../images/nav/account.png');}
-#gmaps .gmaps-nav ul li a i.i-settings {background: url('../images/nav/settings.png');}
-#gmaps .gmaps-nav ul li a i.i-wat {background: url('../images/nav/wat.png');}
-#gmaps .gmaps-nav ul li a i.i-hoe {background: url('../images/nav/hoe.png');}
-#gmaps .gmaps-nav ul li a i.i-legenda {background: url('../images/nav/legenda.png');}
+#gmaps .gmaps-nav ul li a i.i-home {background-image: url('../images/nav/home.png');}
+#gmaps .gmaps-nav ul li a i.i-maps {background-image: url('../images/nav/maps.png');}
+#gmaps .gmaps-nav ul li a i.i-account {background-image: url('../images/nav/account.png');}
+#gmaps .gmaps-nav ul li a i.i-settings {background-image: url('../images/nav/settings.png');}
+#gmaps .gmaps-nav ul li a i.i-wat {background-image: url('../images/nav/wat.png');}
+#gmaps .gmaps-nav ul li a i.i-hoe {background-image: url('../images/nav/hoe.png');}
+#gmaps .gmaps-nav ul li a i.i-legenda {background-image: url('../images/nav/legenda.png');}
+
 
 
 
