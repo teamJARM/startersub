@@ -108,7 +108,7 @@ table {
 
 #top-bar .nav ul li {
     float: left;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 #top-bar .nav ul li:first-child {
@@ -153,8 +153,10 @@ table {
 #gmaps .gmaps-nav {
     position: absolute;
     margin: 0 auto;
-    top: 20px;
-    left: calc(50% - 222px);
+    top: 30px;
+    left: calc(50% - 300px);
+    width: 600px;
+    height: 55px;
 }
 
 #gmaps .gmaps-nav ul {
@@ -169,11 +171,10 @@ table {
 
 #gmaps .gmaps-nav ul li {
     float: left;
-    border-left: 1px solid #CCC;
-}
-
-#gmaps .gmaps-nav ul li:first-child {
-    border-left: 0px;
+    border-left: 0.16666666666 solid #CCC;
+    width: 33.33333333%;
+    box-shadow: inset 0 0 0 -1px red;
+    text-align: center;
 }
 
 #gmaps .gmaps-nav ul li a {
@@ -183,10 +184,15 @@ table {
     color: #808080;
     display: block;
     padding: 12px 30px;
+    border-left: 1px solid #ccc;
 }
 
 #gmaps .gmaps-nav ul li a:hover {
     background-color: #eaeaea;
+}
+
+#gmaps .gmaps-nav ul li:first-child a {
+    border-left: 0px;
 }
 
 #gmaps .gmaps-nav ul li a i {
@@ -229,6 +235,21 @@ table {
     #top-bar .logo {
         height: 25px;
     }
+
+    #gmaps .gmaps-nav {
+        left: calc(50% - 140px);
+        width: 280px;
+    }
+
+    #gmaps .gmaps-nav ul li a {
+        font-size: 0.5em;
+        padding: 10px;
+    }
+
+    #gmaps .gmaps-nav ul li a i {
+        width: 7px;
+        height: 7px;
+    }
 }
 
 /* Smartphones (landscape) ----------- */
@@ -238,7 +259,7 @@ table {
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
-
+    
 }
 
 /* iPads (portrait and landscape) ----------- */
