@@ -215,6 +215,50 @@ table {
 #gmaps .gmaps-nav ul li a i.i-legenda {background-image: url('../images/nav/legenda.png');}
 
 
+#gmaps .radar {
+    background-image: url('../images/radar.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    position: absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 35px);
+    width: 70px;
+    height: 70px;
+    display: block;
+}
+
+#gmaps .radar .rings  {
+    position: relative;
+    height: inherit;
+}
+
+#gmaps .radar .ring  {
+    width: 0;
+    padding:25px;
+    border: 10px solid #61caea;
+    -webkit-animation-name: 'pulse_animation';
+    -webkit-animation-duration: 3000ms;
+    -webkit-transform-origin:70% 70%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+    
+}
+
+@-webkit-keyframes pulse_animation {
+    0% { -webkit-transform: scale(1); }
+    30% { -webkit-transform: scale(1); }
+    40% { -webkit-transform: scale(1.08); }
+    50% { -webkit-transform: scale(1); }
+    60% { -webkit-transform: scale(1); }
+    70% { -webkit-transform: scale(1.05); }
+    80% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
 #org-info {
     background-color: #FFF;
     height: 16%;
