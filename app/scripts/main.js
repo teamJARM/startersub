@@ -43,7 +43,10 @@ function initialize(location) {
 
     radar.on('click', function(){
             document.querySelector('#gmaps .overlay').setAttribute('data-ping', 'true');
+            var ping = new Audio('audio/sonar.wav');
+            ping.play();
             radar.fadeOut(500, function(){
+                removeOverlay();
                 addMarkers();
                 infoBar.fadeIn(1000);
             });
@@ -163,6 +166,10 @@ function addOverlay(){
     svg.appendChild(rect);
     document.querySelector('#gmaps .overlay').appendChild(svg);
 
+}
+
+function removeOverlay(){
+    $('#gmaps .overlay').remove();
 }
 
 function sonarListener(){
