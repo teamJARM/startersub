@@ -250,36 +250,6 @@ h2 {
     background-image: url('../images/radar-button-active.png');
 }
 
-/*#gmaps .radar .rings  {
-    position: relative;
-    height: inherit;
-}
-
-#gmaps .radar .ring  {
-    width: 0;
-    padding:25px;
-    border: 10px solid #61caea;
-    -webkit-animation-name: 'pulse_animation';
-    -webkit-animation-duration: 3000ms;
-    -webkit-transform-origin:70% 70%;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        border-radius: 50px;
-}
-
-@-webkit-keyframes pulse_animation {
-    0% { -webkit-transform: scale(1); }
-    30% { -webkit-transform: scale(1); }
-    40% { -webkit-transform: scale(1.08); }
-    50% { -webkit-transform: scale(1); }
-    60% { -webkit-transform: scale(1); }
-    70% { -webkit-transform: scale(1.05); }
-    80% { -webkit-transform: scale(1); }
-    100% { -webkit-transform: scale(1); }
-}*/
-
 #gmaps .overlay {
     position: absolute;
     top: 0;
@@ -289,7 +259,7 @@ h2 {
 }
 
 #gmaps .overlay[data-ping='true'] {
-    -webkit-animation: ping 1.5s;
+    -webkit-animation: ping 0.5s forwards ;
 }
 
 @-webkit-keyframes ping {
