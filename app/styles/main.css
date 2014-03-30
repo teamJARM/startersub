@@ -246,7 +246,7 @@ h2 {
     display: block;
 }
 
-#gmaps .radar .rings  {
+/*#gmaps .radar .rings  {
     position: relative;
     height: inherit;
 }
@@ -274,6 +274,32 @@ h2 {
     70% { -webkit-transform: scale(1.05); }
     80% { -webkit-transform: scale(1); }
     100% { -webkit-transform: scale(1); }
+}*/
+
+#gmaps .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: radial-gradient(circle, transparent 15%, black 16%);
+    -webkit-mask-size: auto 100%;
+}
+
+#gmaps .overlay[data-ping='true'] {
+    -webkit-mask-image: radial-gradient(circle, transparent 25%, black 26%);
+    -webkit-mask-size: auto 100%;
+    -webkit-animation: ping 2s;
+}
+
+@-webkit-keyframes ping {
+    0% {
+    -webkit-mask-image: radial-gradient(circle, transparent 25%, black 26%);
+    }
+
+    100% {
+    -webkit-mask-image: radial-gradient(circle, transparent 15%, black 16%);
+    }
 }
 
 /**********/

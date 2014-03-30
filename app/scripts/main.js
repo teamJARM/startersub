@@ -42,11 +42,14 @@ function initialize(location) {
     //map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(infoDiv);
 
     radar.on('click', function(){
+            document.querySelector('#gmaps .overlay').setAttribute('data-ping', 'true');
             radar.fadeOut(500, function(){
                 addMarkers();
                 infoBar.fadeIn(1000);
             });
     });
+
+    addOverlay();
 
 }
 
@@ -119,4 +122,56 @@ function addInfo(m){
             infowindow.open(map, marker);
         });
     });
+}
+
+function addOverlay(){
+    // responsejs.com/labs/dimensions/
+    var matchMedia = window.matchMedia || window.msMatchMedia;
+
+    var viewportH = (function(win, docElem, mM) {
+        var client = docElem.clientHeight,
+            inner = win.innerHeight;
+        if (mM && client < inner && true === mM('(min-height:' + inner + 'px)').matches){
+            return win.innerHeight;
+        }
+        else{
+            return docElem.clientHeight;
+        }
+    }(window, document.documentElement, matchMedia));
+
+
+    var viewportW = (function(win, docElem, mM) {
+        var client = docElem.clientWidth,
+            inner = win.innerWidth;
+        if (mM && client < inner && true === mM('(min-width:' + inner + 'px)').matches){
+            return win.innerWidth;
+        }
+        else{
+            return docElem.clientWidth;
+        }
+    }(window, document.documentElement, matchMedia));
+
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    var svgNS = svg.namespaceURI;
+    var rect = document.createElementNS(svgNS,'rect');
+    rect.setAttribute('x', 0);
+    rect.setAttribute('y', 0);
+    rect.setAttribute('width', viewportW);
+    rect.setAttribute('height', viewportH);
+    rect.setAttribute('fill','black');
+    rect.setAttribute('fill-opacity','0.5');
+    svg.appendChild(rect);
+    document.querySelector('#gmaps .overlay').appendChild(svg);
+
+}
+
+function sonarListener(){
+    var radar = document.querySelector('#gmaps .radar');
+    radar.addEventListener('touchstart', function(e){
+        e.preventDefault();
+    }, false);
+    radar.addEventListener('touchend', function(e){
+        e.preventDefault();
+        document.querySelector('#gmaps .overlay').setAttribute('data-ping', 'true');
+    }, false);
 }
