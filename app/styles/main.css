@@ -283,7 +283,7 @@ h2 {
     background-image: url('../images/header.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 0 -120px;
     position: relative;
     height: 37%;
     width: 100%;
@@ -394,7 +394,7 @@ h2 {
 }
 
 #info-bar .wrapper {
-    display: inline-block;
+    display: block;
 }
 
 #info-bar .wrapper:after {
