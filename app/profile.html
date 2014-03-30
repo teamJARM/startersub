@@ -29,17 +29,23 @@
         <div id="container">
 			<div id="top-bar">
                 <div class="logo"></div>
+                <div class="open">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
                 <div class="nav">
                     <ul>
                         <li><a href="#"><i class="i-home"></i><span class="nav-title">Home</span></a></li>
-                        <li class="active"><a href="index.html"><i class="i-maps"></i><span class="nav-title">Maps</span></a></li>
-                        <li><a href="profile.html"><i class="i-account"></i><span class="nav-title">Account</span></a></li>
-                        <li><a href="#"><i class="i-settings"></i><span class="nav-title">Settings</span></a></li>
+                        <li><a href="index.html"><i class="i-maps"></i><span class="nav-title">Maps</span></a></li>
+                        <li class="active"><a href="profile.html"><i class="i-account"></i><span class="nav-title">Account</span></a></li>
                     </ul>
                 </div>
             </div>
             <div id="header">
-            	<div class="profile-logo"></div>
+            	<div class="profile-logo">
+                    <img src="images/profilepic.png"  alt="">
+                </div>
             </div>
             <div id="content">
             	<div class="info">
@@ -50,19 +56,18 @@
             <div id="services">
             	<h2>Wat bieden wij?</h2>
 				<div id="liquid1" class="carrousel liquid">
-					<span class=" arrow previous"></span>
 					<div class="wrapper">
+                       <div class="arrow previous"></div>
 						<ul>
-							<li><a href="#" title="image 01"><img src="images/image1.png" alt="image 01" border="0" /></a></li>
-							<li><a href="#" title="image 02"><img src="images/image2.png" alt="image 02" border="0" /></a></li>
-							<li><a href="#" title="image 03"><img src="images/image3.png" alt="image 03" border="0" /></a></li>
-							<li><a href="#" title="image 04"><img src="images/image1.png" alt="image 04" border="0" /></a></li>
+							<li><img src="images/image1.png" alt="image 01" /></li>
+							<li><img src="images/image2.png" alt="image 02" /></li>
+							<li><img src="images/image3.png" alt="image 03" /></li>
 						</ul>
+                       <div class="arrow next"></div>
 					</div>
-					<span class="arrow next"></span>
 				</div>
             	<div class="text">
-            		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quasi, quam suscipit nihil laboriosam. Atque voluptas quasi praesentium.
+            		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, quasi, quam suscipit nihil laboriosam. Atque voluptas quasi praesentium. </p>
             	</div>
             </div>
             <div id="contact">
@@ -92,7 +97,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <!--<script src="scripts/main.js"></script>-->
-        <!--<script src="scripts/test.js"></script>-->
+                <script src="scripts/nav.js"></script>
         <!-- endbuild -->
 </body>
 </html>
