@@ -279,7 +279,7 @@ h2 {
     background-image: url('../images/header.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 0 -75px;
     position: relative;
     height: 37%;
     width: 100%;
@@ -390,7 +390,7 @@ h2 {
 }
 
 #info-bar .wrapper {
-    display: inline-block;
+    display: block;
 }
 
 #info-bar .wrapper:after {
@@ -605,6 +605,7 @@ h2 {
 
     #header {
         height: 30%;
+        background-position: 0 0;
     }
 
     /* profile-logo */
@@ -677,10 +678,14 @@ h2 {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media and (min-width: 768px) {  }
+@media and (min-width: 768px){  }
 
 /* Medium devices (desktops, 992px and up) */
-@media and  (min-width: 992px) {  }
+@media and  (max-width: 992px) { 
+    #header {
+        background-position: 0 -186px;
+    }
+ }
 
 /* Large devices (large desktops, 1200px and up) */
 @media and (min-width: 1200px) {  }
