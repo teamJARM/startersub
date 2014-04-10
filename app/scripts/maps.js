@@ -5,16 +5,16 @@ $(document).on('ready', function(){
 });
 
 var map,
-    root = window.location.origin,
-    typeImage = '.png';
-
+    root          = window.location.origin,
+    container     = document.getElementById('map-canvas'),
+    gmaps         = $('#gmaps'),
+    radar         = gmaps.find('.radar'),
+    legendaElem   = gmaps.find('.gmaps-nav ul li').children('.box').find('ul'),
+    infoBar       = $('#info-bar'),
+    markerBase    = root + '/images/markers/';
 
 function initialize(location) {
-    var container     = document.getElementById('map-canvas'),
-        radar         = $('#gmaps').find('.radar'),
-        infoBar       = $('#info-bar'),
-        //infoDiv       = document.getElementById('info'),
-        currLocation  = new google.maps.LatLng(location.coords.latitude, location.coords.longitude),
+    var currLocation  = new google.maps.LatLng(location.coords.latitude, location.coords.longitude),
         mapOptions    = {
             center: currLocation,
             zoom: 12,
@@ -37,9 +37,7 @@ function initialize(location) {
             ]
         };
 
-
     map = new google.maps.Map(container, mapOptions);
-    //map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(infoDiv);
 
     radar.on('click', function(){
             document.querySelector('#gmaps .overlay').setAttribute('data-ping', 'true');
@@ -53,78 +51,83 @@ function initialize(location) {
     });
 
     addOverlay();
-
 }
 
 function addMarkers() {
+   var  jsonUrl       = root + '/scripts/data.json',
+        typeOrg       = [],
+        pointers      = [];
 
-    var iconBase      = root + '/images/markers/';
+    $.getJSON(jsonUrl, function(data) {
+        $.each(data , function(key, value) {
+            typeOrg.push(value);
+            legenda(value);
+        });
+    }).done(function() {
+        for (var i = 0; i < typeOrg.length; i++) {
+            $.each(typeOrg[i].gegevens , function(key, value) {
+                var pointer = new google.maps.Marker({
+                        position: new google.maps.LatLng(value.lat , value.lng),
+                        icon: markerBase + typeOrg[i].image,
+                        map: map,
+                        title: value.title,
+                        text: value.content,
+                        url: value.url || '',
+                        logo: value.logo || '',
+                        draggable: false,
+                        optimized: true,
+                        visible: true,
+                        animation: google.maps.Animation.DROP
+                    });
 
-    var markers = [];
-
-    var incubator = new google.maps.Marker({
-        position: new google.maps.LatLng(51.924655, 4.484926),
-        icon: iconBase + 'incubator' + typeImage,
-        map: map,
-        title: 'Creative Factory',
-        text: 'Hét verzamelpand voor jong, creatieve ondernemers in Rotterdam',
-        url: 'http://www.creativefactory.nl',
-        logo: '',
-        draggable: false,
-        optimized: false,
-        visible: true,
-        animation: google.maps.Animation.DROP
-    });
-
-    var startup = new google.maps.Marker({
-        position: new google.maps.LatLng(51.912981, 4.466759),
-        icon: iconBase + 'startup' + typeImage,
-        map: map,
-        title: 'Hogeschool Rotterdam',
-        url: 'http://www.hro.nl/',
-        text: ' Het onderwijs op Hogeschool Rotterdam is nauw verweven met de stedelijke en regionale ontwikkelingen in de regio Rotterdam. ',
-        logo: '',
-        draggable: false,
-        optimized: false,
-        visible: true,
-        animation: google.maps.Animation.DROP
-    });
-
-    var accelerator = new google.maps.Marker({
-        position: new google.maps.LatLng(51.906366, 4.459603),
-        icon: iconBase + 'accelerator' + typeImage,
-        map: map,
-        title: 'Gemeente Rotterdam',
-        draggable: true,
-        optimized: false,
-        visible: true,
-        animation: google.maps.Animation.DROP
-    });
-
-    markers.push(incubator, startup, accelerator);
-
-    addInfo(markers);
-}
-
-function addInfo(m){
-    var markers = m;
-
-    $.each(markers, function(i, val){
-        var marker = val,
-            url    = '';
-
-        if(marker.url){
-            url    = marker.url;
+                pointers.push(pointer);
+            });
         }
 
+        if(pointers.length){
+            markerInfo(pointers);
+        }
+    });
+}
+
+function legenda(point){
+    var type    = point.type,
+        image   = markerBase + point.image;
+
+        legendaElem.append('<li><img src="' + image + '" alt="' + type +'"><span>' + type + '</span></li>');
+}
+
+function markerInfo(p){
+    var markers     = p;
+
+    $.each(markers, function(i, val){
+        var marker  = val,
+            url     = marker.url,
+            name    = marker.title;
+
         var infowindow = new google.maps.InfoWindow({
-            content: marker.title + ' ' +  url
+            content: name + ' ' +  url
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map, marker);
+            var $this = this;
+            //infowindow.open(map, marker);
+            fullInfoBottom($this);
         });
     });
+}
+
+function fullInfoBottom(e) {
+        var target      = e,
+            container   = $('#info-bar').find('.info'),
+            markerImg   = container.children('.org-logo').find('img'),
+            infoElem    = container.children('.text'),
+            title       = infoElem.find('h2 a'),
+            text        = infoElem.find('p');
+
+            markerImg.attr('src', target.icon);
+            title.text(target.title);
+            text.text(target.text);
 }
 
 function addOverlay(){
