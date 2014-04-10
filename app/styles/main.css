@@ -184,6 +184,7 @@ h2 {
 
 #gmaps .gmaps-nav ul {
     list-style-type: none;
+    position: relative;
 }
 
 #gmaps .gmaps-nav ul:after {
@@ -200,7 +201,7 @@ h2 {
 }
 
 #gmaps .gmaps-nav ul li a {
-    background-color: #FFF;
+    background-color: #EAEAEA;
     font-size: 0.8em;
     text-decoration: none;
     color: #808080;
@@ -209,12 +210,38 @@ h2 {
     border-left: 1px solid #ccc;
 }
 
-#gmaps .gmaps-nav ul li a:hover {
-    background-color: #eaeaea;
+#gmaps .gmaps-nav ul li a:hover,
+#gmaps .gmaps-nav ul > li.active a {
+    background-color: #FFF;
 }
 
 #gmaps .gmaps-nav ul li:first-child a {
     border-left: 0px;
+}
+
+#gmaps .gmaps-nav ul li .box {
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+#gmaps .gmaps-nav ul li .box p {
+    padding: 10px;
+}
+
+#gmaps .gmaps-nav ul li .box li {
+    padding: 10px 0;
+}
+
+#gmaps .gmaps-nav ul li .box li img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+#gmaps .gmaps-nav ul li .legenda li:last-child {
+    border-top: 0px;
 }
 
 #gmaps .gmaps-nav ul li a i {

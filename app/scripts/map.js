@@ -53,7 +53,6 @@ function initialize(location) {
     });
 
     addOverlay();
-
 }
 
 function addMarkers() {
