@@ -203,7 +203,7 @@ function fullInfoBottom(e, markers) {
             allInfo.children('.match').prepend("<div class='myStat2' data-dimension='65' data-text=" + match  + "%" + " data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + match + "' data-fgcolor='#2885c7' data-bgcolor='#a8daf2' ></div>");
             priceRanked.find('.price h2').text(price);
 
-            var starIcon = rankedH2.children('i.star').clone()
+            var starIcon = rankedH2.children('i.star').clone();
             rankedH2.empty().prepend(starIcon);
             rankedH2.append(rank);
             priceRanked.find('.ranked p span.stemmen').text(stemmen);
