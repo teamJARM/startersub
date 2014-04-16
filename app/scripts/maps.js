@@ -197,7 +197,8 @@ function fullInfoBottom(e, markers) {
             title.attr('href', name + '.html');
 
             var dataWidth       = 7,
-                dataFont        = 14;
+                dataFont        = 14,
+                dataDimens      =  45;
 
             allInfo.children('.match').prepend("<div class='myStat2' data-dimension='65' data-text=" + match  + "%" + " data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + match + "' data-fgcolor='#2885c7' data-bgcolor='#a8daf2' ></div>");
             priceRanked.find('.price h2').text(price);
@@ -206,9 +207,9 @@ function fullInfoBottom(e, markers) {
             rankedH2.empty().prepend(starIcon);
             rankedH2.append(rank);
             priceRanked.find('.ranked p span.stemmen').text(stemmen);
-            diagrams.find('.parking').prepend("<div class='myStat2' data-dimension='45' data-text='P' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + parking + "' data-fgcolor='#f05151' data-bgcolor='#f59799' ></div>");
-            diagrams.find('.ov').prepend("<div class='myStat2' data-dimension='45' data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + ov + "' data-icon='ov' data-icon-size='10' data-fgcolor='#a7c838' data-bgcolor='#cfe178' ></div>");
-            diagrams.find('.horeca').prepend("<div class='myStat2' data-dimension='65' data-text='' data-width='12' data-fontsize=" + dataFont + " data-percent='" + horeca + "' data-fgcolor='#0c71b5' data-bgcolor='#4f9ecd' ></div>");
+            diagrams.find('.parking').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='P' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + parking + "' data-fgcolor='#f05151' data-bgcolor='#f59799' ></div>");
+            diagrams.find('.ov').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + ov + "' data-icon='ov' data-icon-size='10' data-fgcolor='#a7c838' data-bgcolor='#cfe178' ></div>");
+            diagrams.find('.horeca').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + horeca + "' data-icon='ov' data-icon-size='10' data-fgcolor='#0c71b5' data-bgcolor='#4f9ecd' ></div>");
 
             $('.myStat2').circliful();
 }

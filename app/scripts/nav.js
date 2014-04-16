@@ -8,6 +8,7 @@ $(document).on('ready', function() {
 		mapsElem 	= $('#map-canvas'),
 		infoBar 	= $('#info-bar'),
 		slideBtn	= infoBar.find('.slidebtn'),
+		closeBtn	= infoBar.find('.buttons .close'),
 		gmaps       = $('#gmaps'),
 		mapsDisplay	= true,
 		navActive	= false;
@@ -37,9 +38,17 @@ $(document).on('ready', function() {
 			});
 
 			slideBtn.on('click', function(){
-				gmaps.slideToggle(time);
+				gmaps.slideUp(time);
 				infoBar.find('.allinfo').slideToggle();
+				slideBtn.hide();
 			});
+
+			closeBtn.on('click', function(){
+				gmaps.slideDown(time);
+				infoBar.find('.allinfo').slideToggle();
+				slideBtn.show();
+			});
+
 });
 
 var time = 400;
