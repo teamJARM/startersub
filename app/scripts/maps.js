@@ -2,16 +2,20 @@
 /* global google */
 $(document).on('ready', function(){
     navigator.geolocation.getCurrentPosition(initialize);
+
 });
 
 var map,
     root          = window.location.origin,
     container     = document.getElementById('map-canvas'),
+    currentPoint  = 0,
     gmaps         = $('#gmaps'),
     radar         = gmaps.find('.radar'),
-    legendaElem   = gmaps.find('.gmaps-nav ul li').children('.box').find('ul'),
+    legendaElem   = gmaps.find('.zie').find('.information ul'),
     infoBar       = $('#info-bar'),
-    markerBase    = root + '/images/markers/';
+    imageBase     = root + '/images/',
+    markerBase    = imageBase + 'markers/',
+    animMarker    = '';
 
 function initialize(location) {
     var currLocation  = new google.maps.LatLng(location.coords.latitude, location.coords.longitude),
@@ -64,14 +68,32 @@ function addMarkers() {
             legenda(value);
         });
     }).done(function() {
+        var id = 0;
+
         for (var i = 0; i < typeOrg.length; i++) {
+
+            var myIcon = new google.maps.MarkerImage(markerBase + typeOrg[i].image, null, null, null, new google.maps.Size(22,40));
+
             $.each(typeOrg[i].gegevens , function(key, value) {
-                var pointer = new google.maps.Marker({
+                var pointer = new MarkerWithLabel({
                         position: new google.maps.LatLng(value.lat , value.lng),
-                        icon: markerBase + typeOrg[i].image,
+                        icon: myIcon,
                         map: map,
+                        labelContent: id + 1,
+                        labelAnchor: new google.maps.Point(6, 33),
+                        labelClass: "labels", // the CSS class for the label
+                        labelInBackground: false,
+                        labelVisible: true,
+                        id: id,
                         title: value.title,
                         text: value.content,
+                        match     : value.match,
+                        price     : value.price,
+                        rank      : value.rank,
+                        stemmen   : value.stemmen,
+                        parking   : value.parking,
+                        ov        : value.ov,
+                        horeca    : value.horeca,
                         url: value.url || '',
                         logo: value.logo || '',
                         draggable: false,
@@ -79,13 +101,14 @@ function addMarkers() {
                         visible: true,
                         animation: google.maps.Animation.DROP
                     });
-
+                id++;
                 pointers.push(pointer);
             });
         }
 
         if(pointers.length){
             markerInfo(pointers);
+            google.maps.event.trigger(pointers[currentPoint], 'click');
         }
     });
 }
@@ -98,36 +121,96 @@ function legenda(point){
 }
 
 function markerInfo(p){
-    var markers     = p;
+    var markers     = p,
+        container    = $('#info-bar'),
+        next         = container.find('.next'),
+        prev         = container.find('.previous');
 
     $.each(markers, function(i, val){
         var marker  = val,
-            url     = marker.url,
-            name    = marker.title;
-
-        var infowindow = new google.maps.InfoWindow({
-            content: name + ' ' +  url
-        });
+            pos     = i;
 
         google.maps.event.addListener(marker, 'click', function() {
             var $this = this;
-            //infowindow.open(map, marker);
-            fullInfoBottom($this);
+            currentPoint = $this.id;
+
+            fullInfoBottom($this, markers);
+            toggleBounce($this, markers);
+
         });
+    });
+
+    next.on('click', function(){
+        currentPoint++;
+        (currentPoint > markers.length - 1)? currentPoint = 0: currentPoint = currentPoint;
+
+        google.maps.event.trigger(markers[currentPoint], 'click');
+    });
+
+    prev.on('click', function(){
+        currentPoint--;
+        (currentPoint < 0)? currentPoint = markers.length - 1: currentPoint = currentPoint;
+
+        google.maps.event.trigger(markers[currentPoint], 'click');
     });
 }
 
-function fullInfoBottom(e) {
-        var target      = e,
-            container   = $('#info-bar').find('.info'),
-            markerImg   = container.children('.org-logo').find('img'),
-            infoElem    = container.children('.text'),
-            title       = infoElem.find('h2 a'),
-            text        = infoElem.find('p');
+function toggleBounce(e, markers) {
+        for (var i = 0; i < markers.length; i++) {
+            if(i != e.id){
+                if (markers[i].getAnimation() != null) {
+                    markers[i].setAnimation(null);
+                }
+            }else{
+                  markers[i].setAnimation(google.maps.Animation.BOUNCE);
+            }
+        };
+}
 
-            markerImg.attr('src', target.icon);
-            title.text(target.title);
-            text.text(target.text);
+function fullInfoBottom(e, markers) {
+        var target       = e,
+            currentPoint = target.id,
+            match        = target.match,
+            logo         = target.logo,
+            name         = target.title,
+            parking      = target.parking,
+            price        = target.price,
+            ov           = target.ov,
+            stemmen      = target.stemmen,
+            rank         = target.rank,
+            horeca       = target.horeca,
+            pointers     = markers,
+            container    = $('#info-bar'),
+            infoElem     = container.find('.info'),
+            markerImg    = infoElem.children('.org-logo').find('img'),
+            textElem     = infoElem.children('.text'),
+            title        = textElem.find('h2 a'),
+            allInfo      = container.find('.allinfo'),
+            priceRanked  = allInfo.children('.priceranked'),
+            diagrams     = allInfo.children('.diagrams'),
+            rankedH2     = priceRanked.find('.ranked h2');
+
+            allInfo.find('.myStat2').remove();
+
+            markerImg.attr('src', imageBase + logo);
+            title.text((currentPoint + 1) + '. ' + name);
+            title.attr('href', name + '.html');
+
+            var dataWidth       = 7,
+                dataFont        = 14;
+
+            allInfo.children('.match').prepend("<div class='myStat2' data-dimension='65' data-text=" + match  + "%" + " data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + match + "' data-fgcolor='#2885c7' data-bgcolor='#a8daf2' ></div>");
+            priceRanked.find('.price h2').text(price);
+
+            var starIcon = rankedH2.children('i.star').clone()
+            rankedH2.empty().prepend(starIcon);
+            rankedH2.append(rank);
+            priceRanked.find('.ranked p span.stemmen').text(stemmen);
+            diagrams.find('.parking').prepend("<div class='myStat2' data-dimension='45' data-text='P' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + parking + "' data-fgcolor='#f05151' data-bgcolor='#f59799' ></div>");
+            diagrams.find('.ov').prepend("<div class='myStat2' data-dimension='45' data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + ov + "' data-icon='ov' data-icon-size='10' data-fgcolor='#a7c838' data-bgcolor='#cfe178' ></div>");
+            diagrams.find('.horeca').prepend("<div class='myStat2' data-dimension='65' data-text='' data-width='12' data-fontsize=" + dataFont + " data-percent='" + horeca + "' data-fgcolor='#0c71b5' data-bgcolor='#4f9ecd' ></div>");
+
+            $('.myStat2').circliful();
 }
 
 function addOverlay(){
@@ -168,7 +251,6 @@ function addOverlay(){
     rect.setAttribute('fill-opacity','0.5');
     svg.appendChild(rect);
     document.querySelector('#gmaps .overlay').appendChild(svg);
-
 }
 
 function removeOverlay(){
