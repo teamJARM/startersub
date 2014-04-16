@@ -1,0 +1,162 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Startersub</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="container">
+    <div id="top-bar">
+        <div class="logo"></div>
+        <div class="open">
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#"><i class="i-home"></i><span class="nav-title">Home</span></a></li>
+                <li class="active"><a href="maps.html"><i class="i-maps"></i><span class="nav-title">Maps</span></a></li>
+                <li><a href=""><i class="i-account"></i><span class="nav-title">Account</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="gmaps">
+        <div id="map-canvas"></div>
+        <div class="overlay"></div>
+        <div class="gmaps-nav">
+            <ul>
+                <li class="wzw"><a href="#"><i class="i-wat"></i><span>Wat zoeken we?</span></a>
+                </li>
+                <li class="hzw"><a href="#"><i class="i-hoe"></i><span>Hoe zoeken we?</span></a>
+                </li>
+                <li class="wzi"><a href="#"><i class="i-legenda"></i><span>Wat zie ik?</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="box wat">
+            <div class="filter">
+                <div class="information">
+                <h2>Filter</h2>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="text">
+                <h2>Wat doet het onderste paneel?</h2>
+                <p>In het onderste paneel ziet u de naam van het door u geselecteerde punt. Vanaf hier kunt u meer informatie over het punt opvragen door te kijken op welke eisen het het best bij u past, of door direct naar het profiel te gaan. </p>
+                </div>
+            </div>
+        </div>
+        <div class="box hoe">
+            <div class="search">
+                <div class="information">
+                <h2>Search</h2>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="text">
+                <h2>Wat doet het onderste paneel?</h2>
+                <p>In het onderste paneel ziet u de naam van het door u geselecteerde punt. Vanaf hier kunt u meer informatie over het punt opvragen door te kijken op welke eisen het het best bij u past, of door direct naar het profiel te gaan. </p>
+                </div>
+            </div>
+        </div>
+        <div class="box zie">
+            <div class="legenda">
+                <div class="information">
+                <h2>Legenda</h2>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <div class="text">
+                <h2>Wat doet het onderste paneel?</h2>
+                <p>In het onderste paneel ziet u de naam van het door u geselecteerde punt. Vanaf hier kunt u meer informatie over het punt opvragen door te kijken op welke eisen het het best bij u past, of door direct naar het profiel te gaan. </p>
+                </div>
+            </div>
+        </div>
+        <a class="radar" href="#"></a>
+    </div>
+    <div id="info-bar">
+    	<div class="slidebtn"></div>
+        <div class="wrapper">
+            <div class="arrow previous"></div>
+            <div class="info">
+                <div class="org-logo">
+                    <img src="" alt="">
+                </div>
+                <div class="text">
+                    <h2><a href="#"></a></h2>
+                </div>
+            </div>
+            <div class="arrow next"></div>
+        </div>
+        <div class="allinfo">
+                <div class="match">
+                    <p>Overeenkomst met uw wensen</p>
+                </div>
+                <div class="priceranked">
+                    <div class="price">
+                        <h2></h2>
+                        <p>incl BTW</p>
+                    </div>
+                    <div class="ranked">
+                        <h2><i class="star"></i></h2>
+                        <p><span class="stemmen"></span> stemmen</p>
+                    </div>
+                </div>
+                <div class="diagrams">
+                    <div class=" diagram parking">
+                        <p>Privé parking</p>
+                    </div>
+                    <div class="diagram ov">
+                        <p>Zeer toegankelijk</p>
+                    </div>
+                    <div class="diagram horeca">
+                        <p>Horeca</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--  <script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X');ga('send','pageview');
+</script> -->
+
+<!-- build:js({app,.tmp}) scripts/main.js -->
+
+<script src="scripts/mapwithmarker.js"></script>
+<script src="scripts/maps.js"></script>
+<script src="scripts/nav.js"></script>
+<script src="scripts/jquery.circliful.min.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -8,6 +8,14 @@
 			{
 				"id"		: "1",
 				"title"		: "Startup #1",
+				"logo"		: "avatar.png",
+				"match"		: 90,
+				"price"		: "€1250,-",
+				"rank"		: 5,
+				"stemmen"	: 91,
+				"parking"	: 80,
+				"ov"		: 80,
+				"horeca"	: 75,
 				"lat"  		: 51.917658,
 				"lng" 		: 4.484584,
 				"content"	: " Lorem ipsum Startup #1 dolor sit amet, consectetur adipisicing elit. Sequi, odio."
@@ -15,6 +23,14 @@
 			{
 				"id"		: "2",
 				"title"		: "Startup #2",
+				"logo"		: "avatar.png",
+				"match"		: 85,
+				"price"		: "€1175,-",
+				"rank"		: 4,
+				"stemmen"	: 78,
+				"parking"	: 60,
+				"ov"		: 89,
+				"horeca"	: 75,
 				"lat"		: 51.919801,
 				"lng"		: 4.484020,
 				"content"	: "Lorem ipsum Startup #2 dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsum, dignissimos ullam similique!"
@@ -30,6 +46,14 @@
 			{ 
 				"id"		: "1",
 				"title"		: "Incubator #1",
+				"logo"		: "avatar.png",
+				"match"		: 80,
+				"price"		: "€1300,-",
+				"rank"		: 5,
+				"stemmen"	: 80,
+				"parking"	: 50,
+				"ov"		: 60,
+				"horeca"	: 75,
 				"lat"		: 51.920720,
 				"lng"		: 4.489899,
 				"content"	: " Lorem ipsum Incubator #1 dolor sit amet, consectetur adipisicing elit. Sequi, odio."
@@ -37,6 +61,14 @@
 			{ 
 				"id"		: "2",
 				"title"		: "Incubator #2",
+				"logo"		: "avatar.png",
+				"match"		: 78,
+				"price"		: "€1100,-",
+				"rank"		: 4,
+				"stemmen"	: 124,
+				"parking"	: 85,
+				"ov"		: 76,
+				"horeca"	: 75,
 				"lat"		: 51.923923,
 				"lng"		: 4.496551, 
 				"content"	: " Lorem ipsum Incubator #2 ullam similique expedita qui sequi eum debitis inventore excepturi!"
@@ -52,6 +84,14 @@
 			{ 
 				"id"		: "1",
 				"title"		: "Accelerator #1",
+				"logo"		: "avatar.png",
+				"match"		: 76,
+				"price"		: "€1150,-",
+				"rank"		: 5,
+				"stemmen"	: 99,
+				"parking"	: 50,
+				"ov"		: 80,
+				"horeca"	: 75,
 				"lat"		: 51.924652,
 				"lng"		: 4.484926,
 				"content"	: " Lorem ipsum Accelerator #1 dolor sit amet, consectetur adipisicing elit. Sequi, odio."
@@ -59,6 +99,14 @@
 			{ 
 				"id"		: "2",
 				"title"		: "Accelerator #2",
+				"logo"		: "avatar.png",
+				"match"		: 75,
+				"price"		: "€1200,-",
+				"rank"		: 4,
+				"stemmen"	: 110,
+				"parking"	: 80,
+				"ov"		: 87,
+				"horeca"	: 75,
 				"lat"		: 51.913017,
 				"lng"		: 4.466553,
 				"content"	: " Lorem ipsum Accelerator #2 dolor sit qui sequi eum debitis inventore excepturi!"
@@ -74,6 +122,14 @@
 			{ 
 				"id"		: "1",
 				"title"		: "Couch #1",
+				"logo"		: "avatar.png",
+				"match"		: 80,
+				"price"		: "€1190,-",
+				"rank"		: 3,
+				"stemmen"	: 187,
+				"parking"	: 45,
+				"ov"		: 100,
+				"horeca"	: 75,
 				"lat"		: 51.933680,
 				"lng"		: 4.484976,
 				"content"	: " Lorem ipsum Couch #1 dolor sit amet, consectetur adipisicing elit. Sequi, odio."
@@ -81,6 +137,14 @@
 			{ 
 				"id"		: "2",
 				"title"		: "Couch #2",
+				"logo"		: "avatar.png",
+				"match"		: 79,
+				"price"		: "€1225,-",
+				"rank"		: 4,
+				"stemmen"	: 78,
+				"parking"	: 30,
+				"ov"		: 60,
+				"horeca"	: 75,
 				"lat"		: 51.926118,
 				"lng"		: 4.466563,
 				"content"	: " Lorem ipsum Couch #2 dolor sit qui sequi eum debitis inventore excepturi!"
