@@ -167,7 +167,7 @@ function choice4(input){
 	// - Mail
 
 	// Go to Map
-	window.location.href = '/map.html';
+	window.location.href = '/maps.html';
 }
 
 function createContentNode () {
