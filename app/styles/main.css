@@ -622,7 +622,7 @@ h2 {
 }
 
 #info-bar .allinfo .match {
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 #info-bar .allinfo .match p {
@@ -636,7 +636,7 @@ h2 {
 #info-bar .allinfo .priceranked {
     background-color: #FFF;
     margin: 20px -10px;
-    padding: 25px 0;
+    padding: 10px 0;
 }
 
 #info-bar .allinfo .diagrams .diagram {
@@ -706,13 +706,16 @@ h2 {
     bottom: 4px;
 }
 
-.circliful i.ov {
-    background-image: url('../images/ov.png');
+.circliful i,
+#info-bar .ranked i {
     background-position: 0 0;
     -webkit-background-size: 100% auto;
          -o-background-size: 100% auto;
             background-size: 100% auto;
     background-repeat: no-repeat;
+}
+
+.circliful i {
     width: 10px;
     height: 12px;
     display: block;
@@ -721,17 +724,76 @@ h2 {
     left: calc(50% - 8px);
 }
 
+.circliful i.ov { background-image: url('../images/ov.png');}
+.circliful i.horeca { background-image: url('../images/horeca.png');}
+
 #info-bar .ranked i.star {
     background-image: url('../images/star.png');
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+#info-bar .proffields {
+    background-color: #FFF;
+    margin: 20px -10px;
+    padding: 12px 0;
+}
+
+#info-bar .proffields .icons {
+    padding-top: 10px;
+}
+
+#info-bar .proffields .icons i {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
     background-position: 0 0;
     -webkit-background-size: 100% auto;
          -o-background-size: 100% auto;
             background-size: 100% auto;
     background-repeat: no-repeat;
-    width: 15px;
-    height: 15px;
-    display: inline-block;
+    margin-left: 10px;
 }
+
+#info-bar .proffields .icons i:first-child {
+    margin-left: 0;
+}
+
+#info-bar .proffields p {
+    font-size: .8em;
+}
+
+#info-bar .proffields i.architec {background-image: url('../images/architect.png');}
+#info-bar .proffields i.communication {background-image: url('../images/communication.png');}
+#info-bar .proffields i.grafisch {background-image: url('../images/grafisch.png');}
+#info-bar .proffields i.it {background-image: url('../images/it.png');}
+#info-bar .proffields i.media {background-image: url('../images/media.png');}
+
+/* buttons */
+#info-bar .buttons  {
+}
+
+#info-bar .buttons .btn {
+    display: inline-block;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+#info-bar .buttons .btn.scan {
+    background-color: #2985c7;
+}
+
+#info-bar .buttons .btn.close {
+    background-color: #b3b3b3;
+    margin-left: 5px;
+}
+
+#info-bar .buttons .btn span {
+    color: #FFF;
+    font-size: .6em;
+}
+
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
