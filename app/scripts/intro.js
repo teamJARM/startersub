@@ -13,7 +13,8 @@ function init(){
 	// Display choice1's options
 	// 
 	// Title: Een nieuwe zee om te bevaren!
-	title = document.createElement('h2').appendChild(document.createTextNode('Een nieuwe zee om te bevaren!'));
+	title = document.createElement('h2');
+	title.appendChild(document.createTextNode('Een nieuwe zee om te bevaren!'));
 	
 	content.appendChild(title);
 	content.appendChild
@@ -30,7 +31,8 @@ function choice1(){
 	// Display choice2's options
 	// 
 	// Title: Ik ben een ...
-	title = document.createElement('h2').appendChild(document.createTextNode('Ik ben een ...'));
+	title = document.createElement('h2');
+	title.appendChild(document.createTextNode('Ik ben een ...'));
 	// Startup -- Incubator -- Investor
 	options = document.createElement('div');
 
@@ -87,7 +89,8 @@ function choice2(input){
 	// Display choice3's options
 	// 
 	// Title: Ik zoek een ...
-	title = document.createElement('h2').appendChild(document.createTextNode('Ik zoek een ...'));
+	title = document.createElement('h2');
+	title.appendChild(document.createTextNode('Ik zoek een ...'));
 	// Startup -- Incubator -- Investor
 	options = document.createElement('div');
 
@@ -133,6 +136,9 @@ function choice2(input){
 }
 
 function choice3(input){
+	var title;
+	var info;
+	var form;
 	// User selects what they are looking for
 	// Checklist choice
 	// 1, 2 and/or 3
@@ -140,8 +146,17 @@ function choice3(input){
 	// Display choice4's options
 	// 
 	// Title: Een nieuwe stip op de radar
+	title = document.createElement('h2');
+	title.appendChild(document.createTextNode('Een nieuwe stip op de radar'));
 	// Vul onderstaande info in en wij laten je gezicht zien aan StarterSub. Deze gegevens vormen de basis voor jouw profiel, maar kunnen nog aangepast worden
+	info = document.createElement('p');
+	info.appendChild(document.createTextNode('Vul onderstaande info in en wij laten je gezicht zien aan StarterSub. Deze gegevens vormen de basis voor jouw profiel, maar kunnen nog aangepast worden'));
+	
+	var content = createContentNode();
+	content.appendChild(title);
+	content.appendChild(info);
 
+	replaceTheNode(content);
 	introButton.setAttribute('onclick','choice4()');
 }
 
@@ -152,7 +167,7 @@ function choice4(input){
 	// - Mail
 
 	// Go to Map
-	
+	window.location.href = '/map.html';
 }
 
 function createContentNode () {
