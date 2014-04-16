@@ -75,7 +75,7 @@ h2 {
 }
 
 #container.intro {
-    background: url("../images/intro-background.png") no-repeat center center fixed;
+    background: url("../images/intro/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1021,21 +1021,28 @@ h2 {
     #intro-container label {
         display: inline-block;
         position: relative;
-        /*padding-top: 50px;*/
-        padding-bottom: 80px;
+        margin-bottom: 80px;
         top: 60px;
         left: -20px;
-        /*text-align: center;*/
         width: 22%;
     }
 
+    #intro-container input[type=checkbox],
+    #intro-container input[type=radio] {
+        visibility: hidden;
+    }
+
+
     #intro-container input[type=checkbox]:before {
+        visibility: visible;
         content: '';
         display: block;
         position: relative;
         width: 50px;
         height: 50px;
-        background: purple;
+        /*background-size: 100%;*/
+        filter: grayscale(100%);
+        transition: all 0.5s;
     }
     
     #intro-container input[type=checkbox]:checked:before {
@@ -1043,21 +1050,41 @@ h2 {
     }
 
     #intro-container input[type=radio]:before {
+        visibility: visible;
         content: '';
         display: block;
         position: relative;
         width: 50px;
         height: 50px;
-        background: 
-        linear-gradient(
-          rgba(255, 0, 0, 0.45), 
-          rgba(255, 0, 0, 0.45)
-        ),
-        red;
+        /*background-size: 100%;*/
+        filter: grayscale(100%);
+        transition: all 0.5s;
+    }
+    
+    #intro-container input[type=checkbox]:checked:before,
+    #intro-container input[type=radio]:checked:before {
+        filter: none;
     }
 
-    #intro-container input[type=radio]:checked:before {
-        background: green;
+    #intro-container input[type=checkbox]:nth-of-type(1):before,
+    #intro-container input[type=radio]:nth-of-type(1):before {
+        background: 
+            url(/images/intro/startups.png);
+            background-size: 100%;
+    }
+
+    #intro-container input[type=checkbox]:nth-of-type(2):before,
+    #intro-container input[type=radio]:nth-of-type(2):before {
+        background: 
+            url(/images/intro/incubators.png);
+            background-size: 100%;
+    }
+
+    #intro-container input[type=checkbox]:nth-of-type(3):before,
+    #intro-container input[type=radio]:nth-of-type(3):before {
+        background: 
+            url(/images/intro/investors.png);
+            background-size: 100%;
     }
 }
 
