@@ -305,6 +305,14 @@ h2 {
 }
 
 /**********/
+/* profile */
+/**********/
+#profile {
+    position: relative;
+    display: none;
+}
+
+/**********/
 /* header */
 /**********/
 #header {
@@ -313,7 +321,7 @@ h2 {
     background-repeat: no-repeat;
     background-position: 0 -75px;
     position: relative;
-    height: 37%;
+    height: 130px !important;
     width: 100%;
 }
 
@@ -349,24 +357,32 @@ h2 {
 /* services */
 /************/
 #services {
-    background-color: #c2def2;
+    background-color: #f2f2f2;
     text-align: center;
     padding: 35px;
 }
 
 #services .text {
-    padding: 0 50px;
+    padding: 0;
 }
 
 /* text */
 #services .text p {
-    color: #939ca3;
+    color: #fff;
     line-height: 1.2em;
 }
 
 /* carrousel liquid */
 #services .liquid {
-    margin-bottom: 20px;
+    margin-top: 10px;
+    background-image: url(../images/slider.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#services .wrapper {
+    padding: 35px 15px;
 }
 
 #services .wrapper:after {
@@ -400,12 +416,11 @@ h2 {
 
 #services .liquid ul {
     display: inline-block;
+    width: 80%;
 }
 
 #services .liquid ul li {
     width: 180px;
-    height: 130px;
-    margin-left: 30px;
     display: inline-block;
 }
 
@@ -582,7 +597,7 @@ h2 {
 /***********/
 #contact {
     text-align: center;
-    padding: 30px 0;
+    padding: 0;
 }
 
 #contact .icons {
@@ -596,8 +611,8 @@ h2 {
     -webkit-background-size: 100% 100%;
          -o-background-size: 100% 100%;
             background-size: 100% 100%;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin-left: 30px;
 }
 
@@ -808,13 +823,13 @@ h2 {
     font-size: .6em;
 }
 
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
     h1, 
     h2 {
-        font-size: 1.25em;
+        font-size: .9em;
+        margin-bottom: 12px;
     }
 
     #top-bar {
@@ -921,7 +936,7 @@ h2 {
 
     /* content */
     #content {
-        padding: 80px 25px 40px;
+        padding: 50px 25px 20px;
     }
 
     #content p {
@@ -930,22 +945,26 @@ h2 {
 
     /* service */
     #services {
-        padding: 15px;
+        padding: 15px 0 0;
+        margin-bottom: 20px;
     }
 
     #services .liquid .arrow {
-        height: 40px;
+        height: 30px;
         width: 15px;
     }
 
     #services .liquid ul li {
-        width: 60px;
-        height: 40px;
-        margin-left: 10px;
+        margin-left: 0;
+    }
+
+    #services h2 {
+        color: #808080;
+        font-size: .9em;
     }
 
     #services .text p {
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
     
     /* info-bar */
@@ -979,6 +998,7 @@ h2 {
     #info-bar .info {
         padding: 0 20px;
         width: 68%;
+        cursor: pointer;
     }
 
     #info-bar .slidebtn {
