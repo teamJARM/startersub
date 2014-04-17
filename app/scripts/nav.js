@@ -9,8 +9,10 @@ $(document).on('ready', function() {
 		infoBar 	= $('#info-bar'),
 		slideBtn	= infoBar.find('.slidebtn'),
 		closeBtn	= infoBar.find('.buttons .close'),
+		scanBtn		= infoBar.find('.buttons .scan'),
 		gmaps       = $('#gmaps'),
 		profile 	= container.find('#profile'),
+		profClsBtn	= profile.children('#closeprofile'),
 		mapsDisplay	= true,
 		navActive	= false;
 
@@ -50,10 +52,18 @@ $(document).on('ready', function() {
 				slideBtn.show();
 			});
 
-			infoBar.find('.info').on('click', function(){
+			scanBtn.on('click', function(){
 				gmaps.slideUp(time);
 				infoBar.slideToggle();
 				profile.slideToggle();
+			});
+
+			profClsBtn.on('click', function(){
+				gmaps.slideDown(time);
+				infoBar.slideToggle();
+				infoBar.find('.allinfo').slideToggle();
+				profile.slideToggle();
+				slideBtn.show();
 			});
 });
 

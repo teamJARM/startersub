@@ -441,12 +441,70 @@ h2 {
     font-size: .5em;
 }
 
+/* wat */
 #gmaps div.wat {
   display: none;
 }
 
+#gmaps div.wat .information {
+  margin-bottom: 15px;
+}
+
+#gmaps div.wat ul {
+    background-color: #FFF;
+    box-shadow: 1px 1px 1px #CCC;
+}
+
+#gmaps div.wat ul li {
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+#gmaps div.wat ul li:first-child {
+    border-top: 0;
+}
+
+#gmaps div.wat ul li label {
+    font-size: .7em;
+    vertical-align: 3px;
+}
+
+/* hoe */
 #gmaps div.hoe {
     display: none;
+}
+
+#gmaps div.hoe .information {
+  margin-bottom: 15px;
+}
+
+#gmaps div.hoe ul {
+    background-color: #FFF;
+    box-shadow: 1px 1px 1px #CCC;
+}
+
+#gmaps div.hoe ul li {
+    padding: 5px;
+    border-top: 1px solid #ccc;
+}
+
+#gmaps div.hoe ul li:first-child {
+    border-top: 0;
+}
+
+#gmaps div.hoe ul li label {
+    font-size: .7em;
+    vertical-align: 3px;
+}
+
+#gmaps div.hoe ul li select {
+      border: 0 !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: url('dropdown_arrow.png') no-repeat;
+      background-position: 82px 7px;
+      text-indent: 0.01px;
+      text-overflow: "";
 }
 
 /* zie */
@@ -495,7 +553,6 @@ h2 {
 #gmaps div.zie .text {
    margin-top: 20px;
 }
-
 
 /* info-bar */
 #info-bar {
@@ -957,6 +1014,7 @@ h2 {
     #info-bar {
         padding: 15px 15px 10px;
         position: relative;
+        border-top: 1px solid #ccc;
     }
 
     #info-bar .org-logo img {
@@ -984,7 +1042,6 @@ h2 {
     #info-bar .info {
         padding: 0 20px;
         width: 68%;
-        cursor: pointer;
     }
 
     #info-bar .slidebtn {
@@ -999,6 +1056,21 @@ h2 {
         position: absolute;
         left: calc(50% - 25px);
         top: -10px;
+        cursor: pointer;
+    }
+
+    #profile #closeprofile {
+        background-image: url('../images/slidedown.png');
+        -webkit-background-size: 100%;
+             -o-background-size: 100%;
+                background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        width: 50px;
+        height: 12px;
+        position: absolute;
+        left: calc(50% - 25px);
+        top: -0;
         cursor: pointer;
     }
 }

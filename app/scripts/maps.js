@@ -214,7 +214,7 @@ function fullInfoBottom(e, markers) {
             priceRanked.find('.ranked p span.stemmen').text(stemmen);
             diagrams.find('.parking').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='P' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + parking + "' data-fgcolor='#f05151' data-bgcolor='#f59799' ></div>");
             diagrams.find('.ov').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + ov + "' data-icon='ov' data-icon-size='10' data-fgcolor='#a7c838' data-bgcolor='#cfe178' ></div>");
-            diagrams.find('.horeca').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + horeca + "' data-icon='ov' data-icon-size='10' data-fgcolor='#0c71b5' data-bgcolor='#4f9ecd' ></div>");
+            diagrams.find('.horeca').prepend("<div class='myStat2' data-dimension=" + dataDimens +" data-text='' data-width=" + dataWidth +" data-fontsize=" + dataFont + " data-percent='" + horeca + "' data-icon='horeca' data-icon-size='10' data-fgcolor='#0c71b5' data-bgcolor='#4f9ecd' ></div>");
             profcontent.find('.info h1').text(name);
             profcontent.find('.info p').text(text);
             profServ.find('.text p').text(extra);
