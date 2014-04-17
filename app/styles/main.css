@@ -512,14 +512,17 @@ h2 {
 }
 
 #gmaps div.hoe ul li select {
+    width: 100%;
       border: 0 !important;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: url('dropdown_arrow.png') no-repeat;
-      background-position: 82px 7px;
       text-indent: 0.01px;
-      text-overflow: "";
-      color: #1455a2;
+      font-size: .7em;
+      color: #808080;
+}
+
+#gmaps div.hoe ul li select option {
+    width: 100%;
+    display: block;
+    overflow: show;
 }
 
 #gmaps div.hoe ul li p {
