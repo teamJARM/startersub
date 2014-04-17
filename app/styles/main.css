@@ -1059,7 +1059,7 @@ h2 {
     #intro-container .intro-button {
         width: 40px;
         margin: 0 auto;
-        /*margin-top: 15px;*/
+        margin-top: 15px;
     }
 
     #intro-container label {
