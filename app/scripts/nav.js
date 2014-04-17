@@ -10,6 +10,7 @@ $(document).on('ready', function() {
 		slideBtn	= infoBar.find('.slidebtn'),
 		closeBtn	= infoBar.find('.buttons .close'),
 		gmaps       = $('#gmaps'),
+		profile 	= container.find('#profile'),
 		mapsDisplay	= true,
 		navActive	= false;
 
@@ -49,6 +50,11 @@ $(document).on('ready', function() {
 				slideBtn.show();
 			});
 
+			infoBar.find('.info').on('click', function(){
+				gmaps.slideUp(time);
+				infoBar.slideToggle();
+				profile.slideToggle();
+			});
 });
 
 var time = 400;
