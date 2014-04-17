@@ -1002,15 +1002,17 @@ h2 {
         background-color: white;
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-70%);
     }
     
     #intro-container h2{
+        text-align: center;
         font-size: 1em;
     }
 
     #intro-container .intro-content {
-        visibility: visible;
+        opacity: 0;
+        transition: all 0.3s;
     }
 
     #intro-container .intro-button {
@@ -1032,23 +1034,7 @@ h2 {
         visibility: hidden;
     }
 
-
-    #intro-container input[type=checkbox]:before {
-        visibility: visible;
-        content: '';
-        display: block;
-        position: relative;
-        width: 50px;
-        height: 50px;
-        /*background-size: 100%;*/
-        filter: grayscale(100%);
-        transition: all 0.5s;
-    }
-    
-    #intro-container input[type=checkbox]:checked:before {
-        background: blue;
-    }
-
+    #intro-container input[type=checkbox]:before,
     #intro-container input[type=radio]:before {
         visibility: visible;
         content: '';
@@ -1056,9 +1042,8 @@ h2 {
         position: relative;
         width: 50px;
         height: 50px;
-        /*background-size: 100%;*/
         filter: grayscale(100%);
-        transition: all 0.5s;
+        transition: all 0.3s;
     }
     
     #intro-container input[type=checkbox]:checked:before,

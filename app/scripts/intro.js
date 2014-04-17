@@ -181,9 +181,16 @@ function replaceTheNode(newChild){
 	var old = introContainer.querySelector('.intro-content');
 	if(old === null){
 		introContainer.appendChild(newChild);
+		$(newChild).css('opacity','1');
 	}
 	else{
-		introContainer.replaceChild(newChild, old);
+		$(old).css('opacity','0');
+		setTimeout(function(){
+			introContainer.replaceChild(newChild, old);
+			setTimeout(function(){
+				$(newChild).css('opacity','1');
+			}, 300);
+		}, 300);
 	}
 }
 
