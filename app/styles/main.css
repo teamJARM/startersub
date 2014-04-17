@@ -1002,7 +1002,7 @@ h2 {
         background-color: white;
         position: relative;
         top: 50%;
-        transform: translateY(-70%);
+        transform: translateY(-50%);
     }
     
     #intro-container h2{
@@ -1010,14 +1010,36 @@ h2 {
         font-size: 1em;
     }
 
+    #intro-container p{
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    #intro-container input[type=text]{
+        font-style: italic;
+        background: #f2f2f2;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
     #intro-container .intro-content {
         opacity: 0;
         transition: all 0.3s;
     }
 
+    .intro-content .profile {
+        width: 50px;
+        margin: 0 auto;
+    }
+
+    .intro-content .profile img{
+        width: 50px;
+    }
+
     #intro-container .intro-button {
         width: 40px;
         margin: 0 auto;
+        /*margin-top: 15px;*/
     }
 
     #intro-container label {
@@ -1043,7 +1065,7 @@ h2 {
         width: 50px;
         height: 50px;
         filter: grayscale(100%);
-        transition: all 0.3s;
+        transition: all 0.2s;
     }
     
     #intro-container input[type=checkbox]:checked:before,
@@ -1070,6 +1092,36 @@ h2 {
         background: 
             url(/images/intro/investors.png);
             background-size: 100%;
+    }
+
+    #intro-container .bar{
+        margin-top: 15px;
+        height: 14px;
+    }
+
+    .bar[data-index='1']{
+        background: url(/images/intro/progress-bar-1.png) no-repeat center center;
+        background-size: 100%;
+    }
+
+    .bar[data-index='2']{
+        background: url(/images/intro/progress-bar-2.png) no-repeat center center;
+        background-size: 100%;
+    }
+
+    .bar[data-index='3']{
+        background: url(/images/intro/progress-bar-3.png) no-repeat center center;
+        background-size: 100%;
+    }
+
+    .bar[data-index='4']{
+        background: url(/images/intro/progress-bar-4.png) no-repeat center center;
+        background-size: 100%;
+    }
+
+    .bar[data-index='5']{
+        background: url(/images/intro/progress-bar-5.png) no-repeat center center;
+        background-size: 100%;
     }
 }
 

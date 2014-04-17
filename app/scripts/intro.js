@@ -74,6 +74,7 @@ function choice1(){
     content.appendChild(options);
 
 	replaceTheNode(content);
+	introContainer.querySelector('.bar').setAttribute('data-index', '2');
 	introButton.setAttribute('onclick','choice2()');
 
 }
@@ -131,6 +132,7 @@ function choice2(input){
     content.appendChild(options);
 
 	replaceTheNode(content);
+	introContainer.querySelector('.bar').setAttribute('data-index', '3');
 	introButton.setAttribute('onclick','choice3()');
 
 }
@@ -138,7 +140,9 @@ function choice2(input){
 function choice3(input){
 	var title;
 	var info;
-	var form;
+	var pic;
+	var picContainer;
+	var fields;
 	// User selects what they are looking for
 	// Checklist choice
 	// 1, 2 and/or 3
@@ -152,19 +156,68 @@ function choice3(input){
 	info = document.createElement('p');
 	info.appendChild(document.createTextNode('Vul onderstaande info in en wij laten je gezicht zien aan StarterSub. Deze gegevens vormen de basis voor jouw profiel, maar kunnen nog aangepast worden'));
 	
+	pic = document.createElement('img');
+	pic.setAttribute('src', '/images/intro/profile.png');
+	picContainer = document.createElement('div');
+	picContainer.className = 'profile';
+	picContainer.appendChild(pic);
+
+	fields = document.createElement('div');
+
+	var textInput1 = document.createElement('input');
+        
+    textInput1.setAttribute('type', 'text');
+    textInput1.setAttribute('placeholder', 'Crewnaam');
+        
+    var textInput2 = textInput1.cloneNode(true);
+	var textInput3 = textInput1.cloneNode(true);
+	var textInput4 = textInput1.cloneNode(true);
+
+    textInput2.setAttribute('placeholder', 'Bedrijfsadres');
+    textInput3.setAttribute('placeholder', 'Mail');
+    textInput4.setAttribute('placeholder', 'Telefoon');
+
+    fields.appendChild(textInput1);
+    fields.appendChild(textInput2);
+    fields.appendChild(textInput3);
+    fields.appendChild(textInput4);
+
 	var content = createContentNode();
 	content.appendChild(title);
 	content.appendChild(info);
+	content.appendChild(picContainer);
+	content.appendChild(fields);
 
 	replaceTheNode(content);
+	introContainer.querySelector('.bar').setAttribute('data-index', '4');
 	introButton.setAttribute('onclick','choice4()');
 }
 
 function choice4(input){
 	// User fills in details
 	// - Crewnaam
-	// - Telefoon
+	// - Bedrijfsadres
 	// - Mail
+	// - Telefoon
+
+	var title;
+	var info;
+
+	title = document.createElement('h2');
+	title.appendChild(document.createTextNode('Welkom aan boord!'));
+	info = document.createElement('p');
+	info.appendChild(document.createTextNode('Uw profiel verschijnt nu in anderen hun vizier. We hebben uw zoekvoorkeur opgeslagen, zodat u recht op uw doel af kunt varen. U kunt nu direct door naar de radar om te beginnen met zoeken of u kunt uw zoekvoorkeuren verder aanscherpen'));
+	
+	var content = createContentNode();
+	content.appendChild(title);
+	content.appendChild(info);
+
+	replaceTheNode(content);
+	introContainer.querySelector('.bar').setAttribute('data-index', '5');
+	introButton.setAttribute('onclick','choice5()');
+}
+
+function choice5(input){
 
 	// Go to Map
 	window.location.href = '/maps.html';
@@ -189,8 +242,8 @@ function replaceTheNode(newChild){
 			introContainer.replaceChild(newChild, old);
 			setTimeout(function(){
 				$(newChild).css('opacity','1');
-			}, 300);
-		}, 300);
+			}, 100);
+		}, 200);
 	}
 }
 
