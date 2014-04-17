@@ -1092,6 +1092,7 @@ h2 {
         left: calc(50% - 25px);
         top: -0;
         cursor: pointer;
+    }
 
     #intro-container {
         margin: auto 13%;
