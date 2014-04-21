@@ -1103,6 +1103,7 @@ h2 {
         background-color: white;
         position: relative;
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
     
@@ -1165,33 +1166,35 @@ h2 {
         position: relative;
         width: 50px;
         height: 50px;
+        -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         transition: all 0.2s;
     }
     
     #intro-container input[type=checkbox]:checked:before,
     #intro-container input[type=radio]:checked:before {
+        -webkit-filter: none;
         filter: none;
     }
 
     #intro-container input[type=checkbox]:nth-of-type(1):before,
     #intro-container input[type=radio]:nth-of-type(1):before {
         background: 
-            url(/images/intro/startups.png);
+            url(../images/intro/startups.png);
             background-size: 100%;
     }
 
     #intro-container input[type=checkbox]:nth-of-type(2):before,
     #intro-container input[type=radio]:nth-of-type(2):before {
         background: 
-            url(/images/intro/incubators.png);
+            url(../images/intro/incubators.png);
             background-size: 100%;
     }
 
     #intro-container input[type=checkbox]:nth-of-type(3):before,
     #intro-container input[type=radio]:nth-of-type(3):before {
         background: 
-            url(/images/intro/investors.png);
+            url(../images/intro/investors.png);
             background-size: 100%;
     }
 
@@ -1201,27 +1204,27 @@ h2 {
     }
 
     .bar[data-index='1']{
-        background: url(/images/intro/progress-bar-1.png) no-repeat center center;
+        background: url(../images/intro/progress-bar-1.png) no-repeat center center;
         background-size: 100%;
     }
 
     .bar[data-index='2']{
-        background: url(/images/intro/progress-bar-2.png) no-repeat center center;
+        background: url(../images/intro/progress-bar-2.png) no-repeat center center;
         background-size: 100%;
     }
 
     .bar[data-index='3']{
-        background: url(/images/intro/progress-bar-3.png) no-repeat center center;
+        background: url(../images/intro/progress-bar-3.png) no-repeat center center;
         background-size: 100%;
     }
 
     .bar[data-index='4']{
-        background: url(/images/intro/progress-bar-4.png) no-repeat center center;
+        background: url(../images/intro/progress-bar-4.png) no-repeat center center;
         background-size: 100%;
     }
 
     .bar[data-index='5']{
-        background: url(/images/intro/progress-bar-5.png) no-repeat center center;
+        background: url(../images/intro/progress-bar-5.png) no-repeat center center;
         background-size: 100%;
     }
 }

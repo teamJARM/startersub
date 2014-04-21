@@ -157,7 +157,7 @@ function choice3(input){
 	info.appendChild(document.createTextNode('Vul onderstaande info in en wij laten je gezicht zien aan StarterSub. Deze gegevens vormen de basis voor jouw profiel, maar kunnen nog aangepast worden'));
 	
 	pic = document.createElement('img');
-	pic.setAttribute('src', '/images/intro/profile.png');
+	pic.setAttribute('src', 'images/intro/profile.png');
 	picContainer = document.createElement('div');
 	picContainer.className = 'profile';
 	picContainer.appendChild(pic);
@@ -220,7 +220,7 @@ function choice4(input){
 function choice5(input){
 
 	// Go to Map
-	window.location.href = '/maps.html';
+	window.location.href = 'maps.html';
 }
 
 function createContentNode () {

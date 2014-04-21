@@ -13,7 +13,7 @@ var map,
     radar         = gmaps.find('.radar'),
     legendaElem   = gmaps.find('.zie').find('.information ul'),
     infoBar       = $('#info-bar'),
-    imageBase     = root + '/images/',
+    imageBase     = root + '/2013_2014/mlab_ondept_t2/images/',
     markerBase    = imageBase + 'markers/',
     animMarker    = '';
 
@@ -58,7 +58,7 @@ function initialize(location) {
 }
 
 function addMarkers() {
-   var  jsonUrl       = root + '/scripts/data.json',
+   var  jsonUrl       = root + '/2013_2014/mlab_ondept_t2/scripts/data.json',
         typeOrg       = [],
         pointers      = [];
 
